@@ -11,7 +11,7 @@ const Sidebar = () => {
     if (!context) {
         return null;
     }
-    const { id, name, src, alt, desc } = context;
+    const { id, name, src, alt, desc, videoSrc } = context;
 
     return (
         <div className={classes.sidebar}>
@@ -25,10 +25,25 @@ const Sidebar = () => {
             </article>
 
             {id !== 1 && (
-                <div>
-                    <Button type="button" className={classes.uiButton} variant="outline">Play</Button>
-                    {/* <button type="button">Play</button> */}
-                </div>
+                <>
+                    <div>
+                        <Button
+                            type="button"
+                            className={classes.uiButton}
+                            variant="outline"
+                        >
+                            Play
+                        </Button>
+                        {/* <button type="button">Play</button> */}
+                    </div>
+                    <section className={classes.videoContainer}>
+                        <iframe
+                            style={{ borderRadius: '1.5rem' }}
+                            src={`https://6436f775d29810126eda99ce--gentle-phoenix-29fa99.netlify.app/Video/${videoSrc}`}
+                            allowFullScreen
+                        />
+                    </section>
+                </>
             )}
         </div>
     );

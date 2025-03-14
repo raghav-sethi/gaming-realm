@@ -18,6 +18,8 @@ export type GameType = {
     src: StaticImageData;
     alt: string;
     desc: string;
+    category: string;
+    videoSrc: string;
 };
 
 export interface SidebarContextType {
@@ -26,5 +28,12 @@ export interface SidebarContextType {
     src: StaticImageData;
     alt: string;
     desc: string;
+    videoSrc: string | null;
     updateContext: (id: number) => void;
+}
+
+export interface GenreType {
+    id: number;
+    name: string;
+    src: StaticImageData;
 }

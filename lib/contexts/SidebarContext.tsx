@@ -24,6 +24,7 @@ export const SidebarContextProvider = ({
                     you are provided with a chat system on the extreme left
                     panel.`
     );
+    const [videoSrc, setVideoSrc] = useState<string | null>(null);
 
     const updateContext = (id: number) => {
         const game = games.find((game) => game.id === id);
@@ -35,6 +36,7 @@ export const SidebarContextProvider = ({
             setSrc(game.src);
             setAlt(game.alt);
             setDesc(game.desc);
+            setVideoSrc(game.videoSrc);
         }
     };
 
@@ -46,6 +48,7 @@ export const SidebarContextProvider = ({
                 src,
                 alt,
                 desc,
+                videoSrc,
                 updateContext,
             }}
         >
