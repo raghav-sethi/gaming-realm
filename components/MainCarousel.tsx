@@ -1,3 +1,5 @@
+'use client';
+import { useRef } from 'react';
 import {
     Carousel,
     CarouselContent,
@@ -8,11 +10,19 @@ import {
 import { mainCarouselImages } from '@/lib/data/data';
 import Image from 'next/image';
 import React from 'react';
-import classes from './MainCarousel.module.css'
+import classes from './MainCarousel.module.css';
+import Autoplay from 'embla-carousel-autoplay';
 
 const MainCarousel = () => {
+    const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
+
     return (
-        <Carousel>
+        <Carousel
+            opts={{
+                loop: true,
+            }}
+            plugins={[plugin.current]}
+        >
             <CarouselContent>
                 {mainCarouselImages.map((image, index) => (
                     <CarouselItem key={index}>
