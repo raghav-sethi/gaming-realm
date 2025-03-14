@@ -13,6 +13,13 @@ import carouselImageTwo from '@/public/Gaming Realm_files/H2x1_WiiUDS_HollowKnig
 import carouselImageThree from '@/public/Gaming Realm_files/oJBRUc.png';
 import carouselImageFour from '@/public/Gaming Realm_files/jnghfc.png';
 import carouselImageFive from '@/public/Gaming Realm_files/590x300.png';
+import sidebar from '@/public/sidebar.png';
+import sidebarVideo from '@/public/sidebar-video.png';
+import loginVideo from '@/public/login.gif';
+import Oceanic from '@/public/Gaming Realm_files/Oceanic.png';
+import GreenGables from '@/public/Gaming Realm_files/Green Gables.png';
+import JustBlack from '@/public/Gaming Realm_files/Just Black.png' 
+import UltraViolet from '@/public/Gaming Realm_files/Ultra Violet.png';
 
 import { CarouselImageType, NavLinkType } from '../types/types';
 

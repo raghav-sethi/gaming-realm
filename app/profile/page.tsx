@@ -1,7 +1,7 @@
 import React from 'react';
-
+import Login from '@/components/Login';
 const ProfilePage = () => {
-    return <div></div>;
+    return <><Login /></>;
 };
 
 export default ProfilePage;
