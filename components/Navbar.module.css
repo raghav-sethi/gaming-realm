@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #1b2846;
+    height: 85vh;
+    max-width: 7vw;
+    padding: 3rem;
+    border-radius: 4rem;
+}
+
+.navLinksList {
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navIcon {
+    height: 4em;
+    width: 4em;
+}
+
+.logo {
+    margin-bottom: 4em;
+}
