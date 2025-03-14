@@ -3,7 +3,8 @@
 import { createContext, useState } from 'react';
 import uiImage from '@/public/Gaming Realm_files/UI.png';
 import { games } from '../data/data';
-import { SidebarContextType } from '../types/types';
+import { GameType, SidebarContextType } from '../types/types';
+import { Queue } from 'queue-typescript';
 
 export const SidebarContext = createContext<SidebarContextType | null>(null);
 
@@ -25,10 +26,13 @@ export const SidebarContextProvider = ({
                     panel.`
     );
     const [videoSrc, setVideoSrc] = useState<string | null>(null);
+    const [recentlyPlayedGames, setRecentlyPlayedGames] = useState<
+        Queue<GameType>
+    >(new Queue<GameType>());
 
     const updateContext = (id: number) => {
         const game = games.find((game) => game.id === id);
-        console.log('Game: ', game);
+        // console.log('Game: ', game);
 
         if (game) {
             setId(game.id);
@@ -37,6 +41,14 @@ export const SidebarContextProvider = ({
             setAlt(game.alt);
             setDesc(game.desc);
             setVideoSrc(game.videoSrc);
+        }
+    };
+
+    const updateRecentlyPlayedGames = (id: number) => {
+        const game = games.find((game) => game.id === id);
+
+        if (game) {
+            setRecentlyPlayedGames((prevState) => [...prevState, game]);
         }
     };
 
@@ -50,6 +62,8 @@ export const SidebarContextProvider = ({
                 desc,
                 videoSrc,
                 updateContext,
+                recentlyPlayedGames,
+                updateRecentlyPlayedGames,
             }}
         >
             {children}

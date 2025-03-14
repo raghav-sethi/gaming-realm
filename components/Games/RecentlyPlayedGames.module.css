@@ -1,0 +1,25 @@
+.container {
+    color: white;
+    width: 100%;
+    text-align: left;
+    height: 10rem;
+}
+
+.container h2 {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    /* margin-bottom: rem; */
+}
+
+.recentGameDiv{
+    border: 2px solid transparent;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.recentGameDiv:hover {
+    border: 2px solid bisque;
+    border-radius: 2rem;
+    padding: 2rem;
+}

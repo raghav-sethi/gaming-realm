@@ -11,7 +11,13 @@ const Sidebar = () => {
     if (!context) {
         return null;
     }
-    const { id, name, src, alt, desc, videoSrc } = context;
+
+    const { id, name, src, alt, desc, videoSrc, updateRecentlyPlayedGames } =
+        context;
+
+    const handleRecentlyPlayedClick = (id: number) => {
+        updateRecentlyPlayedGames(id);
+    };
 
     return (
         <div className={classes.sidebar}>
@@ -31,6 +37,7 @@ const Sidebar = () => {
                             type="button"
                             className={classes.uiButton}
                             variant="outline"
+                            onClick={() => handleRecentlyPlayedClick(id)}
                         >
                             Play
                         </Button>
@@ -38,7 +45,7 @@ const Sidebar = () => {
                     </div>
                     <section className={classes.videoContainer}>
                         <iframe
-                            style={{ borderRadius: '1.5rem' }}
+                            style={{ borderRadius: '1.5rem', width: '20rem' }}
                             src={`https://6436f775d29810126eda99ce--gentle-phoenix-29fa99.netlify.app/Video/${videoSrc}`}
                             allowFullScreen
                         />

@@ -35,7 +35,7 @@ const GenrePage = () => {
                     />
                 ))}
             </div>
-            <h2>We found some games related to your chosen genre!!</h2>
+            <h3>We found some games related to your chosen genre!!</h3>
             <div className={classes.genresContainer}>
                 {genreRelatedGames?.map((game) => (
                     // <Image

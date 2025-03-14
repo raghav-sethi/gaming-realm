@@ -1,7 +1,8 @@
 .sidebar {
     background-color: #1b2846;
     height: 85vh;
-    width: 18vw;
+    /* width: 18vw; */
+    width: 25vw;
     padding: 3rem;
     border-radius: 4rem;
     color: white;
@@ -22,11 +23,11 @@
     margin-bottom: 1rem;
 }
 
-.uiButton{
+.uiButton {
     margin-top: 2rem;
-    color: black    ;
+    color: black;
 }
 
-.videoContainer{
+.videoContainer {
     margin-top: 5rem;
 }
