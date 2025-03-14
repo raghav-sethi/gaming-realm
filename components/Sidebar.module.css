@@ -1,7 +1,33 @@
 .sidebar {
     background-color: #1b2846;
     height: 85vh;
-    width: 32vw;
+    /* width: 18vw; */
+    width: 25vw;
     padding: 3rem;
     border-radius: 4rem;
+    color: white;
+}
+
+.sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.uiImage {
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+
+.uiButton {
+    margin-top: 2rem;
+    color: black;
+}
+
+.videoContainer {
+    margin-top: 5rem;
 }
