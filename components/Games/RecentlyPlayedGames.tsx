@@ -8,7 +8,6 @@ import Image from 'next/image';
 
 const RecentlyPlayedGames = () => {
     const context = useContext(SidebarContext);
-
     if (!context) return null;
 
     const { recentlyPlayedGames } = context;

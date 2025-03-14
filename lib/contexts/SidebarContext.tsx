@@ -4,9 +4,11 @@ import { createContext, useState } from 'react';
 import uiImage from '@/public/Gaming Realm_files/UI.png';
 import { games } from '../data/data';
 import { GameType, SidebarContextType } from '../types/types';
-import { Queue } from 'queue-typescript';
+import { QueueClass } from '../classes/Queue';
 
 export const SidebarContext = createContext<SidebarContextType | null>(null);
+const recentGamesQueue = new QueueClass<number>(4);
+let recentGames: GameType[] = [];
 
 export const SidebarContextProvider = ({
     children,
@@ -26,9 +28,9 @@ export const SidebarContextProvider = ({
                     panel.`
     );
     const [videoSrc, setVideoSrc] = useState<string | null>(null);
-    const [recentlyPlayedGames, setRecentlyPlayedGames] = useState<
-        Queue<GameType>
-    >(new Queue<GameType>());
+    const [recentlyPlayedGames, setRecentlyPlayedGames] = useState<GameType[]>(
+        []
+    );
 
     const updateContext = (id: number) => {
         const game = games.find((game) => game.id === id);
@@ -45,12 +47,48 @@ export const SidebarContextProvider = ({
     };
 
     const updateRecentlyPlayedGames = (id: number) => {
-        const game = games.find((game) => game.id === id);
+        recentGamesQueue.enqueue(id);
 
-        if (game) {
-            setRecentlyPlayedGames((prevState) => [...prevState, game]);
+        const recentIds = recentGamesQueue.getData();
+
+        for (let i = 0; i < recentIds.length; i++) {
+            // if(recentIds[i] in )
+            const foundGame = games.find((game) => game.id === recentIds[i]);
+            if (foundGame) {
+                recentGames[i] = foundGame;
+            }
         }
+
+        recentGames = recentGames.reverse();
+
+        // console.log(recentIds);
+        // console.log(recentGames);
+        setRecentlyPlayedGames(recentGames);
+        // console.log(id);
     };
+
+    // const updateRecentlyPlayedGames = (id: number) => {
+    //     if (recentGamesQueue.length >= 5) {
+    //         recentGamesQueue.dequeue();
+    //     }
+    //     recentGamesQueue.enqueue(id);
+
+    //     const recentGamesIds = recentGamesQueue.toArray();
+    //     const recentGames: GameType[] = [];
+
+    //     for (let i = 0; i < games.length; i++) {
+    //         const game = games[i];
+    //         if (recentGamesIds.indexOf(game.id) != -1) {
+    //             recentGames[recentGamesIds.indexOf(game.id)] = game;
+    //         }
+    //     }
+
+    //     console.log(recentGames);
+
+    //     if (recentGames) {
+    //         setRecentlyPlayedGames(recentGames);
+    //     }
+    // };
 
     return (
         <SidebarContext.Provider

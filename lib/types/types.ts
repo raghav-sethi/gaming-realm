@@ -40,3 +40,11 @@ export interface GenreType {
     name: string;
     src: StaticImageData;
 }
+
+export interface QueueType<Type> {
+    enqueue(dataItem: Type): void;
+    dequeue(): Type | undefined;
+    isFull(): boolean;
+    isEmpty(): boolean;
+    getData(): Type[];
+}
