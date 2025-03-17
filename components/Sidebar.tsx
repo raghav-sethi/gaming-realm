@@ -45,9 +45,10 @@ const Sidebar = () => {
                     </div>
                     <section className={classes.videoContainer}>
                         <iframe
-                            style={{ borderRadius: '1.5rem', width: '20rem' }}
+                            style={{ borderRadius: '1.5rem', width: '21vw', height: '24vh' }}
                             src={`https://6436f775d29810126eda99ce--gentle-phoenix-29fa99.netlify.app/Video/${videoSrc}`}
                             allowFullScreen
+                            loading="lazy"
                         />
                     </section>
                 </>
