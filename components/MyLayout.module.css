@@ -1,17 +1,17 @@
 .overlay {
-    background-color: #080227;
+    background-color:var(--maincontainer-background);
     position: fixed;
     border-radius: 4rem;
     display: flex;
     padding: 3rem;
     width: 90%;
     height: 90%;
-    z-index: 9999;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .mainContent{
-    width: 70%;
+    width: 70%;   
 }
