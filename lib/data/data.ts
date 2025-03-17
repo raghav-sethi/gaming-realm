@@ -108,6 +108,7 @@ export const games: GameType[] = [
         category: 'Single Player',
         videoSrc: 'DinoRun.webm',
         recentlyPlayedSrc: recentGameImageOne,
+        gameUrl:'Dino game/one.html',
     },
     {
         id: 3,
@@ -118,6 +119,7 @@ export const games: GameType[] = [
         category: 'Multi Player',
         videoSrc: 'Roll A Dice.webm',
         recentlyPlayedSrc: recentGameImageTwo,
+        gameUrl:'Roll The Dice/index.html'
     },
     {
         id: 4,
@@ -128,6 +130,7 @@ export const games: GameType[] = [
         category: 'Single Player',
         videoSrc: 'Hand Cricket.webm',
         recentlyPlayedSrc: recentGameImageThree,
+        gameUrl:'HandCricket/index.html'
     },
     {
         id: 5,
@@ -138,6 +141,7 @@ export const games: GameType[] = [
         category: 'Mind Games',
         videoSrc: 'Guess My Number.mp4',
         recentlyPlayedSrc: recentGameImageFour,
+        gameUrl:'GuesstheNumber/index.html'
     },
     {
         id: 6,
@@ -148,6 +152,7 @@ export const games: GameType[] = [
         category: 'Multi Player',
         videoSrc: 'sumo.webm',
         recentlyPlayedSrc: recentGameImageFive,
+        gameUrl:'SumoGame/Sumo/Compete.html'
     },
 
     {
@@ -159,6 +164,7 @@ export const games: GameType[] = [
         category: 'Mind Games',
         videoSrc: 'TicTacToe.webm',
         recentlyPlayedSrc: recentGameImageSix,
+        gameUrl:'TicTacToe/index.html'
     },
     {
         id: 8,
@@ -169,6 +175,7 @@ export const games: GameType[] = [
         category: 'Kids Games',
         videoSrc: 'Kids Garden.webm',
         recentlyPlayedSrc: recentGameImageSeven,
+        gameUrl:'Kids garden/index.html'
     },
     {
         id: 9,
@@ -179,6 +186,7 @@ export const games: GameType[] = [
         category: 'Mind Games',
         videoSrc: 'Scrambled Words.webm',
         recentlyPlayedSrc: recentGameImageEight,
+        gameUrl:'Word Scramble/wordScramble.html'
     },
     {
         id: 10,
@@ -189,6 +197,7 @@ export const games: GameType[] = [
         category: 'Kids Games',
         videoSrc: 'Story Board.webm',
         recentlyPlayedSrc: recentGameImageNine,
+        gameUrl:'Story/index.html'
     },
 ];
 

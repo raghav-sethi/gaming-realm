@@ -31,3 +31,36 @@
 .videoContainer {
     margin-top: 5rem;
 }
+
+.gameContainer {
+    left: 0;
+    top: 0;
+    background-color: #080227;
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameIframe{
+    width: 100vw;
+    height: 100vh;
+    border: none;
+}
+
+.backButton{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
