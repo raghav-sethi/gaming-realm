@@ -29,6 +29,10 @@ export class QueueClass<Type> implements QueueType<Type> {
             this.dequeue();
         }
 
+        if(this.data.includes(dataItem)){
+            this.data.splice(this.data.indexOf(dataItem), 1);
+        }
+
         this.data.push(dataItem);
     }
 

@@ -28,11 +28,12 @@ export default function RootLayout({
         <html lang="en">
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-                style={{ marginTop: '3.5rem', marginLeft: '7.5rem' }}
             >
-                <SidebarContextProvider>
-                    <MyLayout>{children}</MyLayout>
-                </SidebarContextProvider>
+                <div style={{ marginTop: '3.5rem', marginLeft: '7.5rem' }}>
+                    <SidebarContextProvider>
+                        <MyLayout>{children}</MyLayout>
+                    </SidebarContextProvider>
+                </div>
             </body>
         </html>
     );

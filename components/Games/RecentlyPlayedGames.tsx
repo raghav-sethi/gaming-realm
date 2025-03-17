@@ -7,10 +7,17 @@ import { GameType } from '@/lib/types/types';
 import Image from 'next/image';
 
 const RecentlyPlayedGames = () => {
+    // const [recentGames, setRecentGames] = useState<GameType[]>([]);
+
+    // useEffect(() => {
+    //     setRecentGames(recentlyPlayedGames);
+    // }, [recentlyPlayedGames]);
+
     const context = useContext(SidebarContext);
     if (!context) return null;
 
     const { recentlyPlayedGames } = context;
+    console.log('recentlyPlayedGames: ', recentlyPlayedGames);
 
     return (
         <div className={classes.container}>

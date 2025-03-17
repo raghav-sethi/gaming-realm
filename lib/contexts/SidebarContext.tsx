@@ -8,7 +8,6 @@ import { QueueClass } from '../classes/Queue';
 
 export const SidebarContext = createContext<SidebarContextType | null>(null);
 const recentGamesQueue = new QueueClass<number>(4);
-let recentGames: GameType[] = [];
 
 export const SidebarContextProvider = ({
     children,
@@ -50,45 +49,21 @@ export const SidebarContextProvider = ({
         recentGamesQueue.enqueue(id);
 
         const recentIds = recentGamesQueue.getData();
+        const newRecentlyPlayedGames: GameType[] = [];
 
         for (let i = 0; i < recentIds.length; i++) {
-            // if(recentIds[i] in )
             const foundGame = games.find((game) => game.id === recentIds[i]);
             if (foundGame) {
-                recentGames[i] = foundGame;
+                newRecentlyPlayedGames[i] = foundGame;
             }
         }
 
-        recentGames = recentGames.reverse();
+        newRecentlyPlayedGames.reverse();
 
         // console.log(recentIds);
-        // console.log(recentGames);
-        setRecentlyPlayedGames(recentGames);
-        // console.log(id);
+        // console.log(newRecentlyPlayedGames);
+        setRecentlyPlayedGames(newRecentlyPlayedGames);
     };
-
-    // const updateRecentlyPlayedGames = (id: number) => {
-    //     if (recentGamesQueue.length >= 5) {
-    //         recentGamesQueue.dequeue();
-    //     }
-    //     recentGamesQueue.enqueue(id);
-
-    //     const recentGamesIds = recentGamesQueue.toArray();
-    //     const recentGames: GameType[] = [];
-
-    //     for (let i = 0; i < games.length; i++) {
-    //         const game = games[i];
-    //         if (recentGamesIds.indexOf(game.id) != -1) {
-    //             recentGames[recentGamesIds.indexOf(game.id)] = game;
-    //         }
-    //     }
-
-    //     console.log(recentGames);
-
-    //     if (recentGames) {
-    //         setRecentlyPlayedGames(recentGames);
-    //     }
-    // };
 
     return (
         <SidebarContext.Provider
