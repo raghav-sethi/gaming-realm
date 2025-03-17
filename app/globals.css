@@ -47,11 +47,14 @@
 body {
     /* background: var(--background); */
     background: var(--fullscreen-background);
-    /* background-repeat: no-repeat;
-    background-size: cover; */
+    /* background-size: cover; */
+     /* background-repeat: no-repeat;
+    background-size: cover;  */
     /* background: skyblue; */
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
     
 }
 
@@ -89,10 +92,12 @@ body {
     --sidebar-border: oklch(0.929 0.013 255.508);
     --sidebar-ring: oklch(0.704 0.04 256.788);
     --background-color: #080227;
-    --fullscreen-background: linear-gradient(rgb(28, 19, 53), rgb(100, 108, 143));
+    /* --fullscreen-background: linear-gradient(rgb(28, 19, 53), rgb(100, 108, 143)); */
+    --fullscreen-background: rgb(28, 19, 53);
     --maincontainer-background: rgb(8, 2, 39);
     --setting-background: rgba(69, 87, 100, 0.66);
     --container-background: rgb(27, 40, 70);
+    --button-colors:rgba(23, 26, 199, 0.78)
 }
 
 
@@ -144,4 +149,36 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+[data-theme='ultraviolet'] {
+    --fullscreen-background : linear-gradient(rgb(28, 19, 53), rgb(100, 108, 143));
+    --maincontainer-background : rgb(8, 2, 39);
+    --setting-background : rgba(69, 87, 100, 0.66);
+    --container-background : rgb(27, 40, 70);
+    --button-colors:rgba(23, 26, 199, 0.78);
+}
+
+
+[data-theme='greengable'] {
+    --fullscreen-background : linear-gradient(rgb(54, 116, 55), rgb(151, 188, 98));
+    --maincontainer-background : rgba(56, 105, 44, 0.604);
+    --setting-background : rgba(67, 119, 71, 0.61);
+    --container-background : rgb(19, 61, 13);
+    --button-colors:rgba(23, 26, 199, 0.78);
+}
+[data-theme='justblack'] {
+    --fullscreen-background : linear-gradient(rgb(19, 17, 17), rgb(117, 114, 114));
+    --maincontainer-background : rgb(7, 6, 12);
+    --setting-background : rgba(35, 35, 35, 0.66);
+    --container-background : rgb(44, 43, 43);
+    --button-colors:rgba(23, 26, 199, 0.78);
+}
+[data-theme='oceanic'] {
+    --fullscreen-background : rgba(9, 92, 141, 0.76);
+    --maincontainer-background : rgb(10, 50, 73);
+    --setting-background : rgba(67, 107, 119, 0.61);
+    --container-background : rgba(39, 82, 107, 0.76);
+    --button-colors:rgba(23, 26, 199, 0.78);
 }
