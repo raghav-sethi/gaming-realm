@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #1b2846;
+    background-color: var(--container-background);
     height: 85vh;
     max-width: 7vw;
     padding: 3rem;

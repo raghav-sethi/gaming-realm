@@ -11,7 +11,7 @@
 } */
 
 .container {
-    background: #1b2846;
+    background: var(--setting-background);
     color: white;
     height: 85vh;
     border-radius: 4rem;

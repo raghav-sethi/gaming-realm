@@ -1,0 +1,19 @@
+.container {
+    height: 45vh;
+    /* background-color: beige; */
+    width: 100%;
+}
+
+.gameImage {
+    height: 19.3vh;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.cardContainer {
+    height: 25vh;
+    width: 100%;
+    background-color: #1b1c46;
+    border-radius: 20px;
+    margin: 0.5%;
+}

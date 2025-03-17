@@ -1,5 +1,5 @@
 .sidebar {
-    background-color: #1b2846;
+    background-color: var(--container-background);
     height: 85vh;
     width: 32vw;
     padding: 3rem;
