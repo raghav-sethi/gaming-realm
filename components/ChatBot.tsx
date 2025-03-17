@@ -1,7 +1,9 @@
 'use client';
 import React, { useState, useEffect,useRef} from "react";
 import Styles from "./ChatBot.module.css";
-import { useRouter } from 'next/navigation';
+import { SidebarContext } from '@/lib/contexts/SidebarContext';
+import { useContext } from 'react';
+
 
 
 const ChatBot = () => {
@@ -16,10 +18,10 @@ const ChatBot = () => {
     
     const [input, setInput] = useState('');
     const [currentMenu, setCurrentMenu] = useState('main');
-    const messagesEndRef = useRef(null);
+    const messagesEndRef: any = useRef(null);
 
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        messagesEndRef.current?.scrollIntoView ({ behavior: "smooth" });
     };
 
     useEffect(() => {
@@ -94,14 +96,14 @@ const ChatBot = () => {
             } else if (userInput.includes('1') || userInput.includes('sumo')) {
                 setMessages(prevMessages => [
                     ...prevMessages,
-                    { text: 'SUMO', sender: 'bot' },
+                    { text: 'Sumo', sender: 'bot' },
                     { text: 'It is a Two player game in which both the players have to press the assigned keys (Player1 - S and Player2 - L) continuously. Player movement is controlled by the number of key press. Player who throws the opponant out of the ring wins!', sender: 'bot' },
                     { text: 'Play', sender: 'bot-button' }
                 ]);
             } else if (userInput.includes('2') || userInput.includes('roll') || userInput.includes('dice')) {
                 setMessages(prevMessages => [
                     ...prevMessages,
-                    { text: 'Roll a Dice', sender: 'bot' },
+                    { text: 'Roll The Dice', sender: 'bot' },
                     { text: "The player has to roll the dice and the numbers appearing on each roll will be added as it's score and if in case 1 appears, you will loose that score, but you can save your score after every roll, and in both cases the turn is passed on to second player.", sender: 'bot' },
                     { text: 'Play', sender: 'bot-button' }
                 ]);
@@ -159,7 +161,7 @@ const ChatBot = () => {
             } else if (userInput.includes('1') || userInput.includes('dino')) {
                 setMessages(prevMessages => [
                     ...prevMessages,
-                    { text: 'Dino Game', sender: 'bot' },
+                    { text: 'Dino Run', sender: 'bot' },
                     { text: 'Simply press the space bar (or up arrow) and the dino will start running. Press the up arrow to jump over the obstacles (like cacti) in your path. The longer you hold the up arrow, the higher dino will jump. If you need to duck under something, press the down arrow.', sender: 'bot' },
                     { text: 'Play', sender: 'bot-button' }
                 ]);
@@ -202,14 +204,14 @@ const ChatBot = () => {
             } else if (userInput.includes('1') || userInput.includes('guess') && userInput.includes('number')) {
                 setMessages(prevMessages => [
                     ...prevMessages,
-                    { text: 'Guess The Number', sender: 'bot' },
+                    { text: 'Guess the Number', sender: 'bot' },
                     { text: 'The device selects a number between 1-20 and the player has to guess it. With every guess the device will give uh the hints, if you are close to the number or not. With every wrong guess your score decreases. Follow the hints and Guess the Number.', sender: 'bot' },
                     { text: 'Play', sender: 'bot-button' }
                 ]);
             } else if (userInput.includes('2') || userInput.includes('guess') && userInput.includes('word')) {
                 setMessages(prevMessages => [
                     ...prevMessages,
-                    { text: 'Guess The Word', sender: 'bot' },
+                    { text: 'Scrambled Words', sender: 'bot' },
                     { text: 'Presents you some words in scrambled posistions and then asks you to unscramble it and Guess the word If you Guess it correctly you win the game but when you cross a limit of turns you lose the game.', sender: 'bot' },
                     { text: 'Play', sender: 'bot-button' }
                 ]);
@@ -221,30 +223,38 @@ const ChatBot = () => {
             }
         }
     };
-    const router = useRouter();
-    const handlePlayButton = (game: string) => {
-    const gameTitle = messages[messages.length - 3]?.text || '';
+
+    // -----------------------------------------------
+     const context = useContext(SidebarContext);
+        if (!context) {
+            return null;
+        }
     
-    const gameRoutes: Record<string, string> = {
-        'SUMO': '/games/sumo',
-        'Roll a Dice': '/games/roll-a-dice',
-        'Dino Game': '/games/dino',
-        'Tic Tac Toe': '/games/tic-tac-toe',
-        'Hand Cricket': '/games/hand-cricket',
-        'Stack A Building': '/games/stack-a-building',
-        'Choose The Word': '/games/choose-the-word',
-        'Kids Quiz': '/games/kids-quiz',
-        'Story Board': '/games/story-board',
-        'Guess The Number': '/games/guess-the-number',
-        'Guess The Word': '/games/guess-the-word',
+        const { updateContext } = context;
+    const handleGameClick = (id: number) => {
+        updateContext(id);
+        // alert(id);
     };
 
-    if (gameRoutes[gameTitle]) {
-        router.push(gameRoutes[gameTitle]);
-    } else {
-        console.error('Game not found:', gameTitle);
+    const nameToId = (game: string) => {
+        const gameTitle = messages[messages.length - 3]?.text || '';
+        console.log('Game Title: ', gameTitle);
+        const gameRoutes: Record<string, number> = {
+            'Sumo': 6,
+            'Roll The Dice': 3,
+            'Dino Run': 2,
+            'Tic Tac Toe': 7,
+            'Hand Cricket': 4,
+            'Stack A Building': 11,
+            'Kids Quiz': 12,
+            'Story Board': 10,
+            'Guess The Number': 5,
+            'Scrambled Words': 9,
+            'Kids Garden': 8,
+        };
+        console.log(gameRoutes[gameTitle]);
+        return handleGameClick(gameRoutes[gameTitle]);
     }
-};
 
     return (
             <div className={Styles.cont}>
@@ -257,7 +267,7 @@ const ChatBot = () => {
                                 key={index} 
                                 className={msg.sender === 'user' ? Styles.user : 
                                            msg.sender === 'bot-button' ? Styles.botButton : Styles.bot}
-                                onClick={msg.sender === 'bot-button' ? () => handlePlayButton(msg.text) : undefined}
+                                onClick={msg.sender === 'bot-button' ? () => nameToId(msg.text) : undefined}
                             >
                                 {msg.text.split('\n').map((line, i) => (
                                     <React.Fragment key={i}>
