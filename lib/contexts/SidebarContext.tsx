@@ -15,6 +15,7 @@ export const SidebarContextProvider = ({
     children: React.ReactNode;
 }) => {
     const [id, setId] = useState(1);
+    const [gameUrl, setGameUrl] = useState('');
     const [name, setName] = useState('Gaming Realm');
     const [src, setSrc] = useState(uiImage);
     const [alt, setAlt] = useState('uiImage');
@@ -42,6 +43,7 @@ export const SidebarContextProvider = ({
             setAlt(game.alt);
             setDesc(game.desc);
             setVideoSrc(game.videoSrc);
+            setGameUrl(game.gameUrl);
         }
     };
 
@@ -77,6 +79,7 @@ export const SidebarContextProvider = ({
                 updateContext,
                 recentlyPlayedGames,
                 updateRecentlyPlayedGames,
+                gameUrl,
             }}
         >
             {children}

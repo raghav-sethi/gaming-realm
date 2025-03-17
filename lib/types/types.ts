@@ -21,6 +21,7 @@ export type GameType = {
     category: string;
     videoSrc: string;
     recentlyPlayedSrc: StaticImageData;
+    gameUrl: string;
 };
 
 export interface SidebarContextType {
@@ -33,6 +34,7 @@ export interface SidebarContextType {
     recentlyPlayedGames: GameType[];
     updateContext: (id: number) => void;
     updateRecentlyPlayedGames: (id: number) => void;
+    gameUrl: string;
 }
 
 export interface GenreType {
