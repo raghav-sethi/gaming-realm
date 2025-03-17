@@ -4,9 +4,10 @@ import { createContext, useState } from 'react';
 import uiImage from '@/public/Gaming Realm_files/UI.png';
 import { games } from '../data/data';
 import { GameType, SidebarContextType } from '../types/types';
-import { Queue } from 'queue-typescript';
+import { QueueClass } from '../classes/Queue';
 
 export const SidebarContext = createContext<SidebarContextType | null>(null);
+const recentGamesQueue = new QueueClass<number>(4);
 
 export const SidebarContextProvider = ({
     children,
@@ -26,9 +27,9 @@ export const SidebarContextProvider = ({
                     panel.`
     );
     const [videoSrc, setVideoSrc] = useState<string | null>(null);
-    const [recentlyPlayedGames, setRecentlyPlayedGames] = useState<
-        Queue<GameType>
-    >(new Queue<GameType>());
+    const [recentlyPlayedGames, setRecentlyPlayedGames] = useState<GameType[]>(
+        []
+    );
 
     const updateContext = (id: number) => {
         const game = games.find((game) => game.id === id);
@@ -45,11 +46,23 @@ export const SidebarContextProvider = ({
     };
 
     const updateRecentlyPlayedGames = (id: number) => {
-        const game = games.find((game) => game.id === id);
+        recentGamesQueue.enqueue(id);
 
-        if (game) {
-            setRecentlyPlayedGames((prevState) => [...prevState, game]);
+        const recentIds = recentGamesQueue.getData();
+        const newRecentlyPlayedGames: GameType[] = [];
+
+        for (let i = 0; i < recentIds.length; i++) {
+            const foundGame = games.find((game) => game.id === recentIds[i]);
+            if (foundGame) {
+                newRecentlyPlayedGames[i] = foundGame;
+            }
         }
+
+        newRecentlyPlayedGames.reverse();
+
+        // console.log(recentIds);
+        // console.log(newRecentlyPlayedGames);
+        setRecentlyPlayedGames(newRecentlyPlayedGames);
     };
 
     return (
