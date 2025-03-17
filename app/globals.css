@@ -97,7 +97,10 @@ body {
     --maincontainer-background: rgb(8, 2, 39);
     --setting-background: rgba(69, 87, 100, 0.66);
     --container-background: rgb(27, 40, 70);
-    --button-colors:rgba(23, 26, 199, 0.78)
+    --button-colors:rgb(62, 148, 170);
+    --chat-text: rgb(62, 148, 170);
+    --chat-background: linear-gradient(rgb(12, 36, 71), rgb(34, 92, 128));
+    --reply-color: rgb(17, 102, 128);
 }
 
 
@@ -157,28 +160,41 @@ body{
     --maincontainer-background : rgb(8, 2, 39);
     --setting-background : rgba(69, 87, 100, 0.66);
     --container-background : rgb(27, 40, 70);
-    --button-colors:rgba(23, 26, 199, 0.78);
+    --button-colors:rgb(62, 148, 170);
+    --chat-text: rgb(62, 148, 170);
+    --chat-background:  linear-gradient(rgb(12, 36, 71), rgb(34, 92, 128));
+    --reply-color: rgb(17, 102, 128);
 }
 
 
 [data-theme='greengable'] {
     --fullscreen-background : linear-gradient(rgb(54, 116, 55), rgb(151, 188, 98));
-    --maincontainer-background : rgba(56, 105, 44, 0.604);
+    --maincontainer-background : rgb(19, 61, 13);
     --setting-background : rgba(67, 119, 71, 0.61);
-    --container-background : rgb(19, 61, 13);
-    --button-colors:rgba(23, 26, 199, 0.78);
+    --container-background : rgba(56, 105, 44, 0.604);
+    --button-colors:rgba(49, 138, 31, 0.78);
+    --chat-text: rgba(38, 87, 32, 0.808);
+    --chat-background: linear-gradient(rgb(101, 177, 92), rgb(47, 88, 54));
+    --reply-color: rgba(16, 56, 11, 0.808);
 }
 [data-theme='justblack'] {
     --fullscreen-background : linear-gradient(rgb(19, 17, 17), rgb(117, 114, 114));
     --maincontainer-background : rgb(7, 6, 12);
     --setting-background : rgba(35, 35, 35, 0.66);
     --container-background : rgb(44, 43, 43);
-    --button-colors:rgba(23, 26, 199, 0.78);
+    --button-colors:rgb(34, 36, 36);
+    --chat-text: rgb(34, 36, 36);
+    --chat-background: linear-gradient(rgb(55, 55, 56), rgb(118, 120, 121));
+    --reply-color: rgb(64, 64, 65);
+
 }
 [data-theme='oceanic'] {
     --fullscreen-background : rgba(9, 92, 141, 0.76);
     --maincontainer-background : rgb(10, 50, 73);
     --setting-background : rgba(67, 107, 119, 0.61);
     --container-background : rgba(39, 82, 107, 0.76);
-    --button-colors:rgba(23, 26, 199, 0.78);
+    --button-colors:rgba(19, 66, 75, 0.808);
+    --chat-text: rgba(19, 66, 75, 0.808);
+    --chat-background: linear-gradient(rgb(43, 139, 156), rgb(20, 76, 94));
+    --reply-color: rgb(84, 160, 173);
 }

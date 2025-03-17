@@ -45,7 +45,7 @@ const Sidebar = () => {
                 </div>
                 ):(<>
             <section>
-                <Image className={classes.uiImage} src={src} alt={alt} />
+                <Image className={classes.uiImage} src={src} alt={alt}  />
             </section>
             <article>
                 <h3>{name}</h3>
@@ -68,9 +68,10 @@ const Sidebar = () => {
                     </div>
                     <section className={classes.videoContainer}>
                         <iframe
-                            style={{ borderRadius: '1.5rem', width: '20rem' }}
+                            style={{ borderRadius: '1.5rem', width: '15vw', height: '18vh' }}
                             src={`https://6436f775d29810126eda99ce--gentle-phoenix-29fa99.netlify.app/Video/${videoSrc}`}
                             allowFullScreen
+                            loading="lazy"
                         />
                     </section>
                 </>

@@ -1,6 +1,5 @@
 .overlay {
     background-color:var(--maincontainer-background);
-    background-color:var(--maincontainer-background);
     position: fixed;
     border-radius: 4rem;
     display: flex;

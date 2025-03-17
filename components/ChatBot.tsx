@@ -261,7 +261,7 @@ const ChatBot = () => {
                 <div className={`${Styles.chatscreen} ${Styles.col} ${Styles.border}`}>
                     <div className={`${Styles.chattopic} ${Styles.row} ${Styles.border}`}></div>
                     <div className={Styles.chatwindow}>
-                        <h1 style={{fontSize:'30px'}}>Chat Bot</h1>
+                        <h1 style={{fontSize:'30px', marginTop:'1rem', marginLeft:'1rem'}}>Chat Bot</h1>
                         {messages.map((msg, index) => (
                             <div 
                                 key={index} 
