@@ -3,7 +3,7 @@ import React from 'react'
 const GenrePage = () => {
   return (
     <div>
-      Genre Page
+      {/* <MainGenres/> */}
     </div>
   )
 }

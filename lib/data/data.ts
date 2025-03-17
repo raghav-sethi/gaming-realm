@@ -13,6 +13,10 @@ import carouselImageTwo from '@/public/Gaming Realm_files/H2x1_WiiUDS_HollowKnig
 import carouselImageThree from '@/public/Gaming Realm_files/oJBRUc.png';
 import carouselImageFour from '@/public/Gaming Realm_files/jnghfc.png';
 import carouselImageFive from '@/public/Gaming Realm_files/590x300.png';
+import kidGame from '@/public/Gaming Realm_files/2.png';
+import singlePlayer from '@/public/Gaming Realm_files/3.png';
+import multiPlayer from '@/public/Gaming Realm_files/4.png';
+import mindGame from '@/public/Gaming Realm_files/1.png';
 
 import { CarouselImageType, NavLinkType } from '../types/types';
 
