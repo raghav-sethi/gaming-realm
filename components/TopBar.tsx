@@ -1,11 +1,25 @@
+"use client"
 import Image from 'next/image';
 import React from 'react';
 import searchIcon from '@/public/Gaming Realm_files/Untitled design (5).png';
 import notificationIcon from '@/public/Gaming Realm_files/Untitled design (4).png';
 import profileIcon from '@/public/Gaming Realm_files/batman_hero_avatar_comics-512.webp';
-import classes from './TopBar.module.css';
+import classes from './TopBar.module.css'; 
+import UserProfile from './User/UserProfile';
 
 const TopBar = () => {
+
+    const [profile, setProfile] = React.useState(false);
+
+    const handleProfile = () => {
+        if (profile) {
+            setProfile(false);
+        }
+        else {
+            setProfile(true);
+        }
+    };
+
     return (
         <div className={classes.topBar}>
             <section>
@@ -28,7 +42,9 @@ const TopBar = () => {
                     className={classes.topBarIcon}
                     src={profileIcon}
                     alt="profileIcon"
+                    onClick={handleProfile}
                 />
+                {profile && (<UserProfile />)}
             </section>
         </div>
     );
