@@ -108,7 +108,7 @@ export const games: GameType[] = [
         category: 'Single Player',
         videoSrc: 'DinoRun.webm',
         recentlyPlayedSrc: recentGameImageOne,
-        gameUrl:'Dino game/one.html',
+        gameUrl: 'Dino game/one.html',
     },
     {
         id: 3,
@@ -119,7 +119,7 @@ export const games: GameType[] = [
         category: 'Multi Player',
         videoSrc: 'Roll A Dice.webm',
         recentlyPlayedSrc: recentGameImageTwo,
-        gameUrl:'Roll The Dice/index.html'
+        gameUrl: 'Roll The Dice/index.html',
     },
     {
         id: 4,
@@ -130,7 +130,7 @@ export const games: GameType[] = [
         category: 'Single Player',
         videoSrc: 'Hand Cricket.webm',
         recentlyPlayedSrc: recentGameImageThree,
-        gameUrl:'HandCricket/index.html'
+        gameUrl: 'HandCricket/index.html',
     },
     {
         id: 5,
@@ -141,7 +141,7 @@ export const games: GameType[] = [
         category: 'Mind Games',
         videoSrc: 'Guess My Number.mp4',
         recentlyPlayedSrc: recentGameImageFour,
-        gameUrl:'GuesstheNumber/index.html'
+        gameUrl: 'GuesstheNumber/index.html',
     },
     {
         id: 6,
@@ -152,7 +152,7 @@ export const games: GameType[] = [
         category: 'Multi Player',
         videoSrc: 'sumo.webm',
         recentlyPlayedSrc: recentGameImageFive,
-        gameUrl:'SumoGame/Sumo/Compete.html'
+        gameUrl: 'SumoGame/Sumo/Compete.html',
     },
 
     {
@@ -164,7 +164,7 @@ export const games: GameType[] = [
         category: 'Mind Games',
         videoSrc: 'TicTacToe.webm',
         recentlyPlayedSrc: recentGameImageSix,
-        gameUrl:'TicTacToe/index.html'
+        gameUrl: 'TicTacToe/index.html',
     },
     {
         id: 8,
@@ -175,7 +175,7 @@ export const games: GameType[] = [
         category: 'Kids Games',
         videoSrc: 'Kids Garden.webm',
         recentlyPlayedSrc: recentGameImageSeven,
-        gameUrl:'Kids garden/index.html'
+        gameUrl: 'Kids garden/index.html',
     },
     {
         id: 9,
@@ -186,7 +186,7 @@ export const games: GameType[] = [
         category: 'Mind Games',
         videoSrc: 'Scrambled Words.webm',
         recentlyPlayedSrc: recentGameImageEight,
-        gameUrl:'Word Scramble/wordScramble.html'
+        gameUrl: 'Word Scramble/wordScramble.html',
     },
     {
         id: 10,
@@ -197,7 +197,7 @@ export const games: GameType[] = [
         category: 'Kids Games',
         videoSrc: 'Story Board.webm',
         recentlyPlayedSrc: recentGameImageNine,
-        gameUrl:'Story/index.html'
+        gameUrl: 'Story/index.html',
     },
 ];
 
@@ -206,20 +206,37 @@ export const genres: GenreType[] = [
         id: 1,
         name: 'Mind Games',
         src: genreCardImageOne,
+        games: [
+            { name: 'Word Scramble', id: 9 },
+            { name: 'Guess The Number', id: 5 },
+            { name: 'Tic Tac Toe', id: 7 },
+        ],
     },
     {
         id: 2,
         name: 'Kids Games',
         src: genreCardImageTwo,
+        games: [
+            { name: 'Kids Garden', id: 8 },
+            { name: 'Story Board', id: 10 },
+        ],
     },
     {
         id: 3,
         name: 'Single Player',
         src: genreCardImageThree,
+        games: [
+            { name: 'Dino Run', id: 2 },
+            { name: 'Hand Cricket', id: 4 },
+        ],
     },
     {
         id: 4,
         name: 'Multi Player',
         src: genreCardImageFour,
+        games: [
+            { name: 'Sumo', id: 6 },
+            { name: 'Roll The Dice', id: 3 },
+        ],
     },
 ];

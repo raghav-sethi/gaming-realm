@@ -41,6 +41,10 @@ export interface GenreType {
     id: number;
     name: string;
     src: StaticImageData;
+    games: {
+        name: string;
+        id: number;
+    }[];
 }
 
 export interface QueueType<Type> {
