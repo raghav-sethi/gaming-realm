@@ -7,7 +7,7 @@ interface ChildProps {
     setStatus: (param: string) => void;
 }
 
-const Register: React.FC<ChildProps> = ({ status, setStatus }) => {
+const Register: React.FC<ChildProps> = ({ setStatus }) => {
     return (
         <>
             <h1 className={classes.registerHeading}>Sign Up</h1>
