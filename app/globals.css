@@ -188,7 +188,7 @@ body{
     --reply-color: rgb(64, 64, 65);
 
 }
-[data-theme='oceanic'] {
+[data-theme='Oceanic'] {
     --fullscreen-background : rgba(9, 92, 141, 0.76);
     --maincontainer-background : rgb(10, 50, 73);
     --setting-background : rgba(67, 107, 119, 0.61);

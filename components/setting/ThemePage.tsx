@@ -6,14 +6,29 @@ import GreenGable from "../../public/Gaming Realm_files/GreenGables.png";
 import JustBlack from "../../public/Gaming Realm_files/JustBlack.png";
 import Oceanic from "../../public/Gaming Realm_files/Oceani.png";
 import { useTheme } from "next-themes";
+import {API_URLSS} from "@/app/constant";
 
 const ThemePage = () => {
-  const [uiLoaded, setUiLoaded] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    setUiLoaded(true);
-  }, []);
+  
+   useEffect(() => {
+    const setTheme = async () => {
+      try {
+        const response = await fetch(`${API_URLSS}/users/4/preference`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userTheme: theme }),
+        });
+        const result = await response.json();
+        console.log(result);
+      }
+      catch (err) {
+        console.log(err);
+      }
+    };
+    setTheme();
+  }, [theme]);
 
   if (typeof window === "undefined") return null;
 
@@ -76,7 +91,7 @@ const ThemePage = () => {
             className={classes.card}
             onClick={() => {
               console.log(theme);
-              return setTheme("oceanic");
+              return setTheme("Oceanic");
             }}
           >
             <Image

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import classes from "./Login.module.css";
 import Link from "next/link";
-import APIURL from "@/app/constant";
+import { LOGIN_URL } from "@/app/constant";
 
 interface ChildProps {
   status: string;
@@ -18,13 +18,13 @@ const Login: React.FC<ChildProps> = ({ status, setStatus }) => {
 
   async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("Stated to send to backend")
-    console.log(username, password)
+    console.log(LOGIN_URL)
     try{
-      const response = await fetch(`${APIURL}/auth/login`, {
+      const response = await fetch(LOGIN_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email:username, password }),
+        credentials: "include",
       });
   
       const result = await response.json();

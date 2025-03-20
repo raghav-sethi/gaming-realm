@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./FontPage.module.css";
+import {API_URLSS} from "@/app/constant";
 
 const FontPage = () => {
   const [selectedFont, setSelectedFont] = useState("");
@@ -8,7 +9,25 @@ const FontPage = () => {
     if (selectedFont) {
       document.body.style.fontFamily = selectedFont;
       console.log("Font Changed to: ", selectedFont);
+      console.log(selectedFont.replace(/\s/g, "").toLowerCase());
     }
+
+
+    const setFont = async () => {
+      try {
+        const response = await fetch(`${API_URLSS}/users/4/preference`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userFont: selectedFont.replace(/\s/g, "").toLowerCase() }),
+        });
+        const result = await response.json();
+        console.log(result);
+      }
+      catch (err) {
+        console.log(err);
+      }
+    };
+    setFont();
   }, [selectedFont]);
 
   const handleFontChange = (fontFamily: string) => {
