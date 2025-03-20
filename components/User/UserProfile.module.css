@@ -1,0 +1,36 @@
+.container{
+    width: 14%;
+    height: 25%;
+    background-color: white;
+    position: fixed;
+    top: 14%;
+    right: 27.5%;
+    z-index: 100;
+    color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.heading{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.text{
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.setting{
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid gray;
+}
+
+.setting:hover{
+    cursor: pointer;
+}
