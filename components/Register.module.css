@@ -41,7 +41,7 @@
 .loginButton{
     background-color:var(--button-colors);
     padding: 1rem 6rem;
-    width: 70%;
+    width: 80%;
     font-weight: bold;
     font-size: 1.5rem;
     color: white;
@@ -51,6 +51,6 @@
 }
 
 .linkButton{
-    color: #171ac7c7;
+    color: var(--button-colors);
     font-weight: 500;
 }

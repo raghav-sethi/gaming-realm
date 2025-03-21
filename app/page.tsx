@@ -14,7 +14,7 @@ export default function Home() {
     useEffect(() => {
         const getTheme = async () => {
           try {
-            const response = await fetch(`${API_URLSS}/users/4/preference`, {
+            const response = await fetch(`${API_URLSS}/users/${localStorage.getItem('userId')}/preference`, {
               method: "GET",
               headers: { "Content-Type": "application/json" },
             });

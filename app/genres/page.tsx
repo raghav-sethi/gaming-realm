@@ -6,6 +6,7 @@ import { games, genres } from '@/lib/data/data';
 import Image from 'next/image';
 import { GameType } from '@/lib/types/types';
 import { Card, CardContent } from '@/components/ui/card';
+import { FaHeart } from "react-icons/fa";
 
 const GenrePage = () => {
     const [genre, setGenre] = useState('Mind Games');
@@ -49,7 +50,7 @@ const GenrePage = () => {
                             <CardContent
                                 className={`flex flex-col aspect-square items-center justify-center pb-6 m-0 px-0 ${classes.cardContainer}`}
                             >
-                                <Image
+                                 <Image
                                     className={classes.gameImage}
                                     src={game.src}
                                     alt={game.alt}
@@ -57,6 +58,7 @@ const GenrePage = () => {
                                 <span className="text-3xl font-semibold mt-3 text-white">
                                     {game.name}
                                 </span>
+                                <FaHeart className={classes.heartIcon} />
                             </CardContent>
                         </Card>
                 ))}

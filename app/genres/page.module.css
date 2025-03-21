@@ -40,9 +40,30 @@
 }
 
 .cardContainer {
+    position: relative;
     height: 25vh;
     width: 100%;
     background-color: #1b1c46;
     border-radius: 20px;
     margin: 0.5%;
+}
+
+
+.heartIcon{
+    position: absolute;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    top: 2rem;
+    right: 2rem;
+    padding: .4rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.heartIcon:hover{
+    color: #f00;
+    cursor: pointer;
 }

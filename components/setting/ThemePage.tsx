@@ -15,7 +15,7 @@ const ThemePage = () => {
    useEffect(() => {
     const setTheme = async () => {
       try {
-        const response = await fetch(`${API_URLSS}/users/4/preference`, {
+        const response = await fetch(`${API_URLSS}/users/${localStorage.getItem("userId")}/preference`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userTheme: theme }),

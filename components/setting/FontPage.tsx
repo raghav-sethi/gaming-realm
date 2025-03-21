@@ -15,7 +15,7 @@ const FontPage = () => {
 
     const setFont = async () => {
       try {
-        const response = await fetch(`${API_URLSS}/users/4/preference`, {
+        const response = await fetch(`${API_URLSS}/users/${localStorage.getItem('userId')}/preference`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userFont: selectedFont.replace(/\s/g, "").toLowerCase() }),
